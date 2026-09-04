@@ -34,6 +34,11 @@ DP 문제 풀이 순서:
 4. 계산 순서 결정: 상향식 or 하향식
 5. 구현 및 검증
 """
+dp = {}
+dp[0] = 0
+dp[1] = 1
+dp[2] = 2
+
 
 def climb_stairs(n):
     """
@@ -45,6 +50,20 @@ def climb_stairs(n):
     Returns:
         n번째 계단까지 오르는 방법의 수
     """
+
+
+    if n <= 2:
+        return dp[n]
+
+
+    if n in dp:
+        return dp[n]
+    
+    else:
+        dp[n] = climb_stairs(n-1) + climb_stairs(n-2)
+
+    
+    
     # TODO: 특별한 경우 처리
     pass
     
