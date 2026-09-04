@@ -42,6 +42,30 @@ def dfs(graph, start, visited=None):
     Returns:
         방문 순서 리스트
     """
+    if visited == None:
+       visited = []
+
+
+    visited.append(start) 
+
+    temp = 0
+
+    for k in graph[start]:
+       if k in visited:
+        temp += 1
+
+    if temp == len(graph[start]):
+       return
+ 
+    
+
+    for x in graph[start]:
+        if x not in visited:
+         dfs(graph, x, visited)
+
+
+         
+        
     # TODO: visited가 None이면 초기화
     pass
     
