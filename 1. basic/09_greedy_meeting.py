@@ -37,8 +37,28 @@ def select_meetings(meetings):
     
     # TODO: 종료 시간 기준으로 정렬
     pass
+
+    if meetings == []:
+        return 0 
+
+
+    meetings.sort(key=lambda x: x[1])
     
     selected = []
+
+    starta , startb = 0 , 0
+
+
+    for x,y in meetings:
+     if x > startb:
+        starta = x
+        startb = y
+        selected.append((starta,startb))
+
+
+
+        
+        
     
     # TODO: 첫 번째 회의 선택
     pass
